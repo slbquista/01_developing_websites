@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Form Page</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <h1>Insert Form</h1>
+        
+        <!--
+        <ul id="menu">Menu
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        
+        <button>Show</button>
+        -->
+        
+        
+        <form id="insert" action="insert.php">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname">
+            <br />
+
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname">
+            <br />
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <br />
+
+            <label for="pasword">Password:</label>
+            <input type="password" name="password" id="password">
+            <br />
+            
+            <input id="submit" type="submit" value="Submit">
+        </form>
+        
+        <p id="result"></p>
+        
+        <h1>Update Form</h1>
+        <form id="update" action="update.php">
+            <label for="username">Username Check:</label>
+            <input type="text" name="username" id="username">
+            <br />
+
+            <label for="pasword">New Password:</label>
+            <input type="text" name="password" id="password">
+            <br />
+            
+            <input id="submit" type="submit" value="Submit">
+        </form>
+        
+        <script src="my_script.js"></script>
+    </body>
+</html>

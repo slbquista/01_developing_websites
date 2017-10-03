@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#middle {
+	background-color: purple;
+}
+
+#top, #middle, #bottom {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex {
+	width: 50%;
+}
+
+#logo1 {
+	margin-top: 45%;
+	margin-left: 40%;
+}
+
+#chef {
+	margin-left: 30%;
+	margin-top: 10%;
+}
+
+#middle .flex p, h2 {
+	text-align: center;
+	size: 1.2em;
+	padding: 2%;
+	color: white;
+}
