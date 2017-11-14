@@ -1,0 +1,33 @@
+h2 {
+	text-align: center;
+	font-family: Georgia;
+}
+
+#content1 {
+	display: flex;
+	justify-content: center;
+}
+
+#content2 {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+#imageContainer2 {
+	width: 100%;
+	display: inline-block;
+}
+ 
+#imageContainer2 img {
+	max-width: 50%;
+	margin: 2%;
+}
+
+.imageContainer3 {
+	margin: 2%;
+}
+
+#imageContainer1 img, .imageContainer3 img {
+	max-width: 100%;
+}

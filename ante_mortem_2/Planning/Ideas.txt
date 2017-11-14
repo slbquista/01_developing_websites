@@ -1,0 +1,7 @@
+Add a comments system, so this would require user accounts to login in order to comment.
+
+Additionally there should be one or more admin accounts that have additional content available to them on the website.
+
+The gallery should read from a database table of links to externally hosted images.
+
+Perhaps for desktop there should be an individual page for each comic page, instead of a gallery.

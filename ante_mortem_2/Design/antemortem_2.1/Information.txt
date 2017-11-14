@@ -1,0 +1,6 @@
+URL: http://studentnet.dundeeandangus.ac.uk/~1516392/antemortem_2/index.html
+
+Media queries are implemented on rows 61 - 72 of style.css
+Gallery is implemented on rows20 - 27 and 52 - 105 in comic_pages.html
+Hamburger menu is implemented on rows 22 - 39 in index.html and hamburger.js
+Dropdown is implemented on rows 55 - 65 in description.html

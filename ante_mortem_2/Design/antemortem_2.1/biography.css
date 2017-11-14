@@ -1,0 +1,9 @@
+.portraitContainer {
+	width: 100%;
+	display: inline-block;
+}
+
+.portrait {
+	max-width: 50%;
+	margin: 2%;
+}
