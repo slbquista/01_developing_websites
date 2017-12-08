@@ -1,8 +1,4 @@
 <?php
-    /* 
-        Created on : 19-Sep-2017
-        Author     : Finn Turnbull
-    */
 
     include_once 'dbconnection.php';
 
