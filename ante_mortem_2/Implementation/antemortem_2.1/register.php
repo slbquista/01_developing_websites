@@ -8,8 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="placeholder.css" media="screen"> 
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/placeholder.css" media="screen"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 		
 		<!-- Imports Google icons -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -31,8 +31,8 @@
 			<ul>
 				<a href="index.php"><li>HOMEPAGE</li></a>
 				<a href="description.php"><li>DESCRIPTION</li></a>
-				<!-- <a href="comic_pages.php"><li>COMIC PAGES</li></a> -->
-				<a href="comic_pages_2.php"><li>COMIC PAGES</li></a>
+				<a href="comic_pages.php"><li>COMIC PAGES</li></a>
+				<!-- <a href="comic_pages_2.php"><li>COMIC PAGES</li></a> -->
 				<a href="biography.php"><li>BIOGRAPHY</li></a>
 				<!-- <a href="register.php"><li>REGISTER</li></a> -->
 				<a href="login.php"><li>LOGIN</li></a>
@@ -43,28 +43,26 @@
 		
 		<div id="container">
 			<div id="title" class="centered">
-				<h1>Register Placeholder Page</h1>
+				<h1>Register</h1>
 			</div>
 			
-			<form id="insert_register" method="POST" action="php/register.php">
-				<label for="fname">First Name:</label>
-				<input type="text" name="fname" id="fname">
-				<br />
+			<div id="form_container">
+				<form id="insert_register" method="POST" action="php/register.php">
+					<input type="text" name="fname" id="fname" placeholder="First Name">
+					<br />
 
-				<label for="lname">Last Name:</label>
-				<input type="text" name="lname" id="lname">
-				<br />
+					<input type="text" name="lname" id="lname" placeholder="Last Name">
+					<br />
 
-				<label for="username">Username:</label>
-				<input type="text" name="username" id="username">
-				<br />
+					<input type="text" name="username" id="username" placeholder="Username">
+					<br />
 
-				<label for="pasword">Password:</label>
-				<input type="password" name="password" id="password">
-				<br />
-				
-				<input id="submit" type="submit" value="Submit">
-			</form>
+					<input type="password" name="password" id="password" placeholder="Password">
+					<br />
+					
+					<input id="submit" type="submit" value="Submit">
+				</form>
+			</div>
 		</div>
 		</div>
 		

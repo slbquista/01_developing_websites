@@ -20,7 +20,7 @@
     
     
     if ($count > 0) {
-		header('location: ../comic_pages_2.php');
+		header('location: ../comic_pages.php');
         //echo "Insert successful!";
     } else {
 		//header('location: ../register.html');

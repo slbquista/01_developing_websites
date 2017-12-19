@@ -28,10 +28,8 @@
     
     
     if ($count > 0) {
-		header('location: ../login.html');
-        //echo "Insert successful!";
+		header('location: ../login.php');
     } else {
-		header('location: ../register.html');
-        //echo "Insert failed!";
+		header('location: ../register.php');
     }
 ?>

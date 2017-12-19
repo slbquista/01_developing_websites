@@ -25,9 +25,10 @@ body {
 #container {
 	min-height: 80%;
 	margin: auto;
+	padding-top: 5%;
 }
 
-.menuItem, .biography, #title, #description {
+.menuItem, .biography, #description {
 	width: 90%;
 	background-color: #800000;
 	border: 0.2em solid #33001a;
@@ -53,9 +54,46 @@ h1, h2, p {
 	margin-top: 4%;
 }
 
+/* CSS for Revision 2 */
+#title {
+	width: 90%;
+	background-color: #800000;
+	border: 0.2em solid #33001a;
+	border-radius: 10px;
+	margin: auto;
+	padding: 2%;
+}
 
+#form_container {
+	margin-top: 5%;
+}
 
+input[type=text], #password {
+    width: 94%;
+    padding: 12px 20px;
+    margin: 3%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+/* label { */
+	/* color: white; */
+	/* font-size: 1.2em; */
+	/* margin: 2%;; */
+/* } */
+
+input[type=submit] {
+    width: 94%;
+    background-color: #800000;
+    color: black;
+    padding: 14px 20px;
+    margin: 3%;
+    border: 0.2em solid #33001a;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 
 /* Media Queries */

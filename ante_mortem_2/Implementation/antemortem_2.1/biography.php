@@ -8,8 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="biography.css" media="screen"> 
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/biography.css" media="screen"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 		
 		<!-- Imports Google icons -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -31,8 +31,8 @@
 			<ul>
 				<a href="index.php"><li>HOMEPAGE</li></a>
 				<a href="description.php"><li>DESCRIPTION</li></a>
-				<!-- <a href="comic_pages.php"><li>COMIC PAGES</li></a> -->
-				<a href="comic_pages_2.php"><li>COMIC PAGES</li></a>
+				<a href="comic_pages.php"><li>COMIC PAGES</li></a>
+				<!-- <a href="comic_pages_2.php"><li>COMIC PAGES</li></a> -->
 				<!-- <a href="biography.php"><li>BIOGRAPHY</li></a> -->
 				<?php
 					session_start();

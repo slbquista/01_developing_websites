@@ -10,14 +10,17 @@
     $sql = "select * from am_users where username = :username
             AND password = :password";
     $stmt = $connection -> prepare ($sql);
-    $success = $stmt->execute(['username' => $username, 'password' => $password, 'admin' => $admin]);
+    $success = $stmt->execute(['username' => $username, 'password' => $password]);
         
     if($success && $stmt -> rowCount() > 0){
+		
         $_SESSION['loggedIn'] = true;
 		
         $_SESSION['username'] = $username;
 		
-		if ($admin == 'Y') {
+		$user = $stmt->fetch(PDO::FETCH_OBJ);
+		if($user->admin == 'Y'){
+			
 			$_SESSION['admin'] = true;
 		} else {
 			$_SESSION['admin'] = false;
@@ -26,7 +29,9 @@
 		header('location: ../index.php');
     } else {
         $_SESSION['loggedIn'] = false;
+		
         $_SESSION['username'] = "";
-		header('location: ../login.html');
+		
+		header('location: ../login.php');
     }
 ?>

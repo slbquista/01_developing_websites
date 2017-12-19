@@ -1,3 +1,62 @@
+<?php
+    include_once 'php/db_connection.php';
+    session_start();
+    
+	//Code for displaying comic pages below
+    //$sql = "select * from am_pages";
+    //$results = $connection -> query($sql);
+    
+    //$pages = $results -> fetchALL(PDO::FETCH_OBJ);
+	
+	//$output = "";
+	//foreach ($pages as $page) {
+	//	$output .= "<h2 style='color: white'>" . $page -> page_id . "</h2>" . "<img src='" . $page -> page_url . "' rel='page_1'/>";
+	//}
+    
+	//Code for inputting comments
+	$output_2 = "";
+	
+	$output_2 .=	"<form id='create_comment' method='POST' action='php/create_comment.php'>
+						<input type='text' name='comment' id='comment' placeholder='Comment'>
+						<br />
+
+						<input id='submit' type='submit' value='Submit'>
+					</form>";
+	
+	//Code for displaying comments
+	$sql = "select * from am_comments";
+    $results = $connection -> query($sql);
+    
+    $comments = $results -> fetchALL(PDO::FETCH_OBJ);
+	
+	$output_3 = "";
+	
+	foreach ($comments as $comment) {
+		$output_3 .= "<div class='comment'><h2>" . $comment -> username . "</h2> <hr> <p>" . $comment -> comment . "</p></div>";
+			
+			//Code for editing comments
+			if ($_SESSION['admin']) {
+				
+				//Code for editing comments
+				$output_3 .= "<form id='edit_comment' method='POST' action='php/edit_comment.php'>
+								<input type='text' name='edit_comment' id='edit_comment' placeholder='Edit'>
+								<br />
+								
+								<input type='hidden' name='comment_id' value='$comment->comment_id' />
+
+								<input id='edit' type='submit' value='Edit'>
+							  </form>";
+			
+				//Code for deleting comments
+				$output_3 .= "<form id='edit_comment' method='POST' action='php/delete_comment.php'>
+								<input type='hidden' name='comment_id' value='$comment->comment_id' />
+
+								<input id='delete' type='submit' value='Delete'>
+							  </form>";
+			}
+	}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -8,8 +67,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="comic_pages.css" media="screen"> 
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/comic_pages.css" media="screen"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 		
 		<!-- Imports Google icons -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -38,10 +97,21 @@
 		
 		<div class="menu">
 			<ul>
-				<a href="#"><a href="index.html"><li>HOMEPAGE</li></a></a>
-				<a href="#"><a href="description.html"><li>DESCRIPTION</li></a></a>
-				<a href="#"><a href="comic_pages.html"><li>COMIC PAGES</li></a></a>
-				<a href="#"><a href="biography.html"><li>BIOGRAPHY</li></a></a>
+				<a href="index.php"><li>HOMEPAGE</li></a>
+				<a href="description.php"><li>DESCRIPTION</li></a>
+				<!-- <a href="comic_pages.php"><li>COMIC PAGES</li></a> -->
+				<!-- <a href="comic_pages_2.php"><li>COMIC PAGES</li></a> -->
+				<a href="biography.php"><li>BIOGRAPHY</li></a>
+				<?php
+					session_start();
+				
+					if (!$_SESSION['loggedIn']) {
+						echo "<a href='register.php'><li>REGISTER</li></a>";
+						echo "<a href='login.php'><li>LOGIN</li></a>";
+					} else {
+						echo "<a href='php/logout.php'><li>LOGOUT</li></a>";
+					}
+				?>
 			</ul>
 		</div>
 		
@@ -103,6 +173,18 @@
 				
 				<script type="text/javascript">jssor_1_slider_init();</script>
 				<!-- #endregion Jssor Slider End -->
+			</div>
+			
+			<div id="comments">
+				<?php
+					if ($_SESSION['loggedIn']) {
+						echo $output_3;
+						
+						echo $output_2;
+					} else {
+						echo "<p style='color: white'>Sorry you're not logged in</p>";
+					}
+				?>
 			</div>
 		</div>
 		

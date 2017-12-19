@@ -34,7 +34,11 @@
 	
 	foreach ($comments as $comment) {
 		$output_3 .= "<h3 style='color: white'>" . $comment -> username . "</h2>" . "<p style='color: white'>" . $comment -> comment . "</p>";
-			if (!$_SESSION['admin']) {
+			
+			//Code for editing comments
+			if ($_SESSION['admin']) {
+				
+				//Code for editing comments
 				$output_3 .= "<form id='edit_comment' method='POST' action='php/edit_comment.php'>
 								<label for='edit_comment' style='color: white;'>Edit comment:</label>
 								<input type='text' name='edit_comment' id='edit_comment'>
@@ -43,18 +47,16 @@
 								<input type='hidden' name='comment_id' value='$comment->comment_id' />
 
 								<input id='edit' type='submit' value='Edit'>
-								
-								
-							 </form>";
+							  </form>";
+			
+				//Code for deleting comments
+				$output_3 .= "<form id='edit_comment' method='POST' action='php/delete_comment.php'>
+								<input type='hidden' name='comment_id' value='$comment->comment_id' />
+
+								<input id='delete' type='submit' value='Delete'>
+							  </form>";
 			}
 	}
-	
-	//Code for admit controls
-	if (!$_SESSION['admin']) {
-		
-		
-	}
-	
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +116,7 @@
 			</div>
 			
             <?php
-                echo $output;
+                //echo $output;
             ?>
 			
 			<?php
@@ -125,8 +127,6 @@
 				} else {
 					echo "<p style='color: white'>Sorry you're not logged in</p>";
 				}
-				
-				
 			?>
 	
 		</div>
