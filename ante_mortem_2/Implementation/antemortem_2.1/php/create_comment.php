@@ -3,7 +3,7 @@
 	
 	session_start();
 	
-	$username = $_SESSION['username'];
+	$username = $_COOKIE["username"]; //$_SESSION['username'];
 	$comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
 
     $query = $connection -> prepare ("

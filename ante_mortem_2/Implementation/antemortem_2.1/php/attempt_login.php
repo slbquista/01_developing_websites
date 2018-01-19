@@ -16,11 +16,13 @@
 		
         $_SESSION['loggedIn'] = true;
 		
-        $_SESSION['username'] = $username;
+		$cookie_name = "username";
+		$cookie_value = $username;
+		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		
 		$user = $stmt->fetch(PDO::FETCH_OBJ);
+		
 		if($user->admin == 'Y'){
-			
 			$_SESSION['admin'] = true;
 		} else {
 			$_SESSION['admin'] = false;

@@ -1,0 +1,38 @@
+/* Add code to remove such large amounts of padding/margin around editing tools while logged in as admin. */
+
+.comment {
+	width: 94%;
+    background-color: #800000;
+    color: black;
+    padding: 5px;
+    margin: 3% 3% 0 3%;
+    border: 0.2em solid #33001a;
+    border-radius: 4px;
+}
+
+hr {
+  background-color: black;
+  height: 1px;
+}
+
+#create_comment {
+	margin-top: 3%;
+}
+
+@media screen and (max-width: 480px) {
+	.comment {
+		margin: 5% 3% 0 3%;
+	}
+	
+	#create_comment {
+		margin-top: 5%;
+	}
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+	.comment {
+		width: 60%;
+		margin: 3% 20% 0 20%;
+
+	}
+}

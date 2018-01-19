@@ -34,7 +34,6 @@
 	foreach ($comments as $comment) {
 		$output_3 .= "<div class='comment'><h2>" . $comment -> username . "</h2> <hr> <p>" . $comment -> comment . "</p></div>";
 			
-			//Code for editing comments
 			if ($_SESSION['admin']) {
 				
 				//Code for editing comments
@@ -182,17 +181,19 @@
 						
 						echo $output_2;
 					} else {
-						echo "<p style='color: white'>Sorry you're not logged in</p>";
+						echo "<div class='comment'><p>Sorry you're not logged in</p></div>";
 					}
 				?>
 			</div>
 		</div>
 		
-		<div id="footer">
-			<p>
-				Website by Finn Turnbull </br>
-				Artwork by Aisling Allan.
-			</p>
+		<div id="footer_container">
+			<div id="footer">
+				<p>
+					Website by Finn Turnbull </br>
+					Artwork by Aisling Allan.
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

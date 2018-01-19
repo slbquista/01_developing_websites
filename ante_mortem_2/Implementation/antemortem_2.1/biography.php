@@ -106,11 +106,13 @@
 			</div>
 		</div>
 		
-		<div id="footer">
-			<p>
-				Website by Finn Turnbull </br>
-				Artwork by Aisling Allan.
-			</p>
+		<div id="footer_container">
+			<div id="footer">
+				<p>
+					Website by Finn Turnbull </br>
+					Artwork by Aisling Allan.
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

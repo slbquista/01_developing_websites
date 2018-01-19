@@ -58,6 +58,7 @@
 					<input id="submit" type="submit" value="Submit">
 				</form>
 			</div>
+		</div>
 			
 		<div id="footer">
 			<p>

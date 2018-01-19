@@ -27,24 +27,26 @@
 			<button class="cross"><i class="material-icons">close</i></button>
 		</div>
 		
-		<div class="menu">
-			<ul>
-				<!-- <a href="index.php"><li>HOMEPAGE</li></a> -->
-				<a href="description.php"><li>DESCRIPTION</li></a>
-				<a href="comic_pages.php"><li>COMIC PAGES</li></a>
-				<!-- <a href="comic_pages_2.php"><li>COMIC PAGES</li></a> -->
-				<a href="biography.php"><li>BIOGRAPHY</li></a>
-				<?php
-					session_start();
-				
-					if (!$_SESSION['loggedIn']) {
-						echo "<a href='register.php'><li>REGISTER</li></a>";
-						echo "<a href='login.php'><li>LOGIN</li></a>";
-					} else {
-						echo "<a href='php/logout.php'><li>LOGOUT</li></a>";
-					}
-				?>
-			</ul>
+		<div id="test">
+			<div class="menu">
+				<ul>
+					<!-- <a href="index.php"><li>HOMEPAGE</li></a> -->
+					<a href="description.php"><li>DESCRIPTION</li></a>
+					<a href="comic_pages.php"><li>COMIC PAGES</li></a>
+					<!-- <a href="comic_pages_2.php"><li>COMIC PAGES</li></a> -->
+					<a href="biography.php"><li>BIOGRAPHY</li></a>
+					<?php
+						session_start();
+					
+						if (!$_SESSION['loggedIn']) {
+							echo "<a href='register.php'><li>REGISTER</li></a>";
+							echo "<a href='login.php'><li>LOGIN</li></a>";
+						} else {
+							echo "<a href='php/logout.php'><li>LOGOUT</li></a>";
+						}
+					?>
+				</ul>
+			</div>
 		</div>
 		
 		<script src="js\hamburger.js"></script>
@@ -52,8 +54,14 @@
 		<div id="container">
 			<div class="menuItem">
 				<h2>Description</h2>
-
-				<p class="centered">Read more about this comic and the artist and authors behind it!</p>
+				
+				<?php
+					if (!$_SESSION['loggedIn']) {
+						echo "<p class='centered'>Read more about this comic and the artist and authors behind it!</p>";
+					} else {
+						echo "<p class='centered'>Hello " . $_COOKIE["username"] . ", read more about this comic and the artist and authors behind it!</p>";
+					}
+				?>
 				
 				<div id="imageContainer1" class="centered"><a href="description.html"><img src="img\banner_2.png" alt="Explosions and Alice"></a></div>
 			</div>
@@ -95,11 +103,13 @@
 			
 		</div>
 		
-		<div id="footer">
-			<p>
-				Website by Finn Turnbull </br>
-				Artwork by Aisling Allan.
-			</p>
+		<div id="footer_container">
+			<div id="footer">
+				<p>
+					Website by Finn Turnbull </br>
+					Artwork by Aisling Allan.
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

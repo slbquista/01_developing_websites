@@ -1,14 +1,14 @@
 <?php
     session_start();
     
-	//$_SESSION['loggedIn'] = false;
-	//$_SESSION['username'] = "";
-	
-	// remove all session variables
+	// Remove all session variables
 	session_unset(); 
 
-	// destroy the session 
-	session_destroy(); 
+	// Destroy the session 
+	session_destroy();
+	
+	// Delete cookie named "username"
+	//setcookie("username", "", time() - 3600, "/");
 	
 	header('location: ../index.php');
 ?>
