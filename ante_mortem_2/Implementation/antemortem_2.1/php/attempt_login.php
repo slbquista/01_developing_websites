@@ -28,7 +28,7 @@
 			$_SESSION['admin'] = false;
 		}
 		
-		header('location: ../index.php');
+		header('location: ../index.php?loggedin="yes"');
     } else {
         $_SESSION['loggedIn'] = false;
 		

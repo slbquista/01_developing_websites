@@ -1,3 +1,11 @@
+<?php
+	if(isset($_GET['loggedin'])){
+		echo "<script>";
+		echo "alert('Hello, you are logged in!');";
+		echo "</script>";
+	}
+?>
+
 <!DOCTYPE html>
 
 <html>
